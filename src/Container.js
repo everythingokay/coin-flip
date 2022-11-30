@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Coin from './Coin';
 import { choice } from './helpers';
+import heads from "./images/heads.png";
+import tails from "./images/tails.png";
 
 class Container extends Component {
     static defaultProps = {
         coins: [
-            { side: 'head', imgSrc: "https://tinyurl.com/55cv2btr" },
-            { side: 'tail', imgSrc: "https://tinyurl.com/2s38f3rw" }
+            { side: 'head', imgSrc: {heads} },
+            { side: 'tail', imgSrc: {tails} }
         ]
     };
     constructor(props) {
