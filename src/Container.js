@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { choice } from './helpers';
 
-class Flip extends Component {
+class Container extends Component {
     static defaultProps = {
         coins: [
             { side: 'head', imgSrc: "https://tinyurl.com/react-coin-heads-jpg" },
@@ -18,7 +19,20 @@ class Flip extends Component {
         this.handleClick = this.handleClick.bind(this);
     };
     flipCoin() {
-
+        const newSide = choice(this.props.coins);
+        this.setState(st => {
+            let newState = {
+                ...st,
+                currentSide: newSide,
+                numFlip: st.numFlip +1
+            }
+            if(newSide.side === "head") {
+                newState.numHead += 1;
+            } else {
+                newState.numTail += 1;
+            }
+            return newState;
+        });
     };
     handleClick(e) {
         this.flipCoin();
@@ -35,4 +49,4 @@ class Flip extends Component {
     }
 };
 
-export default Flip;
+export default Container;

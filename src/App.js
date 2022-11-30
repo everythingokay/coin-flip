@@ -1,10 +1,10 @@
 import './App.css';
-import Flip from './Flip';
+import Container from './Container';
 
 function App() {
   return (
     <div className="App">
-        <Flip />
+        <Container />
     </div>
   );
 }
