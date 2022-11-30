@@ -3,12 +3,8 @@ import './Coin.css';
 
 class Coin extends Component {
     render() {
-        return (
-            // <div className="coin">
-            //     {this.props.side}
-            // </div>
-        )
-    }
+        return <img src={this.props.data.imgSrc} alt={this.props.data.side} />;
+    };
 };
 
 export default Coin;
