@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
-import './Coin.css';
+import React, { Component } from "react";
 
 class Coin extends Component {
     render() {
-        return <img src={this.props.data.imgSrc} alt={this.props.data.side} />;
+        return (
+            <div className="coin">
+                <img src={this.props.data.imgSrc} alt={this.props.data.side} />;
+            </div>
+        )
     };
 };
 

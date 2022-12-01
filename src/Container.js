@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import Coin from './Coin';
-import { choice } from './helpers';
-import heads from "./images/heads.png";
-import tails from "./images/tails.png";
+import React, { Component } from "react";
+import Coin from "./Coin";
+import { choice } from "./helpers";
+import "./assets/heads.png";
+import "./assets/tails.png";
 
 class Container extends Component {
     static defaultProps = {
         coins: [
-            { side: 'head', imgSrc: {heads} },
-            { side: 'tail', imgSrc: {tails} }
+            { side: "head", imgSrc: require("./assets/heads.png") },
+            { side: "tail", imgSrc: require("./assets/tails.png") }
         ]
     };
     constructor(props) {
@@ -27,8 +27,8 @@ class Container extends Component {
             return {
                 currentSide: newSide,
                 numFlip: st.numFlip + 1,
-                numHead: st.numHead + (newSide.side === 'head' ? 1 : 0),
-                numTail: st.numTail + (newSide.side === 'tail' ? 1 : 0)
+                numHead: st.numHead + (newSide.side === "head" ? 1 : 0),
+                numTail: st.numTail + (newSide.side === "tail" ? 1 : 0)
             }
         });
     };
